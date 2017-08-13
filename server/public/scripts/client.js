@@ -1,7 +1,7 @@
 
 
 $('document').ready(function(){
-
+    getList();
     $('#addToList').on('click', function(){
         console.log('add button was clicked');
         //$('#toDoRows').append('<tr><td>Get the button to work</td></tr>');//testing first button click
