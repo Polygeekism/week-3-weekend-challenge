@@ -2,6 +2,9 @@
 
 $('document').ready(function () {
     getList();
+    $('#listOfTasks').on('click', 'tr', function(){
+        $(this).toggleClass('true false');
+    });
     $('#addToList').on('click', function () {
         console.log('add button was clicked');
         //$('#toDoRows').append('<tr><td>Get the button to work</td></tr>');//testing first button click
@@ -50,9 +53,15 @@ function printList(dataRows) {
     $('#listOfTasks').empty();
     for (var i = 0; i < dataRows.length; i++) {
         var task = dataRows[i];
+        var complete = task.task_complete;
        
-        var $taskRow = '<tr><td>' + task.task_description + '</td><td>' + task.task_complete + '</td><td><button class="deleteButton">Delete</button></td></tr>';
-        
+        var $taskRow = '<td>' + task.task_description + '</td><td>' + task.task_complete + '</td>' ;
+        if (complete === true){
+            $taskRow = '<tr class="true">' + $taskRow;
+        } else{
+            $taskRow = '<tr class="false">' + $taskRow;
+        }
+        $taskRow += '<td><button class="deleteButton">Delete</button></td></tr>';
         $taskRow = $($taskRow);
         console.log($taskRow);
         console.log(task.id);
