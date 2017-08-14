@@ -8,7 +8,7 @@ router.get('/', function getCallback(req, res) {
         if (connectionError) {
             res.sendStatus(500);
         } else {
-            client.query('SELECT * FROM tasks;', function (queryError, result) {
+            client.query('SELECT * FROM tasks ORDER BY task_complete ASC;', function (queryError, result) {
                 if (queryError) {
                     res.sendStatus(500);
                 } else {

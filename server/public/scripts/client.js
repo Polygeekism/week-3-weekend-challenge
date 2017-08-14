@@ -73,7 +73,7 @@ function printList(dataRows) {
        
         var $taskRow = '<td>' + task.task_description + '</td>';
         if (complete === true){
-            $taskRow = '<tr class="true">' + $taskRow + '<td><input type="checkbox" checked =true></td>';
+            $taskRow = '<tr class="true">' + $taskRow + '<td><input type="checkbox"  checked></td>';
         } else{
             $taskRow = '<tr class="false">' + $taskRow + '<td><input type="checkbox"></td>';
         }

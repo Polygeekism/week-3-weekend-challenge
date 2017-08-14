@@ -1,5 +1,6 @@
 .true{
     background-color: green;
+    text-decoration: line-through;
 }
 .false{
     background-color: cyan;
