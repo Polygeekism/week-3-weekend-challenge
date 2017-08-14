@@ -3,10 +3,26 @@
 $('document').ready(function () {
     getList();
     $('#listOfTasks').on('click', 'tr', function(){
-        $(this).toggleClass('true false');
+        var taskId = $(this).data().id;
+        var complete = $(this).data().complete;
+        var updateObject = {
+            taskId: taskId,
+            booleanValue: complete
+        }
+        $.ajax({
+            method: 'PUT',
+            url: '/toDoListRoute',
+            data: updateObject,
+            success: function(response){
+                getList();
+            }
+        })
+
+        //$(this).toggleClass('true false');
+        
     });
     $('#addToList').on('click', function () {
-        console.log('add button was clicked');
+        //console.log('add button was clicked');
         //$('#toDoRows').append('<tr><td>Get the button to work</td></tr>');//testing first button click
         var toDoText = {
             task: $('#toDoTask').val()
@@ -17,19 +33,19 @@ $('document').ready(function () {
             url: '/toDoListRoute',
             data: toDoText,
             success: function (response) {
-                console.log('post route hit');
+                //console.log('post route hit');
                 getList();
             }
         })
     });
     $('#listOfTasks').on('click', '.deleteButton', function(){
         var taskId = $(this).closest('tr').data().id;
-        console.log(taskId);
+        //console.log(taskId);
         $.ajax({
             method: 'DELETE',
             url: '/toDoListRoute/' + taskId,
             success: function(response){
-                console.log(response);
+                //console.log(response);
                 getList();
 
             }
@@ -43,7 +59,7 @@ function getList() {
         type: 'GET',
         url: '/toDoListRoute',
         success: function getSuccessCallback(response) {
-            console.log(response);
+            //console.log(response);
             printList(response);
         }
     })
@@ -63,20 +79,12 @@ function printList(dataRows) {
         }
         $taskRow += '<td><button class="deleteButton">Delete</button></td></tr>';
         $taskRow = $($taskRow);
-        console.log($taskRow);
-        console.log(task.id);
+        //console.log($taskRow);
+        //console.log(task.id);
         $taskRow.data('id', task.id);
-        console.log('data for taskId is ', $taskRow.data('id'));
+        $taskRow.data('complete', task.task_complete);
+        //console.log('data for complete is ', $taskRow.data('complete'));
         $('#listOfTasks').append($taskRow);
     }
 }
-// for (var i = 0; i < koalas.length; i++) {
-//     var koala = koalas[i];
-//     var $koalaRow = '<tr><td>' + koala.name + '</td><td>' + koala.age + '</td><td>' + koala.gender + '</td><td>' + koala.ready_for_transfer + '</td><td>' + koala.notes + '</td><td><button class = "deleteKoala">Delete</button></td></tr>';
-//     $koalaRow = $($koalaRow);
-//     console.log($koalaRow);
-//     console.log(koala.id);
-//     $koalaRow.data('id', koala.id);
-//     console.log('data for koala ID is', $koalaRow.data('id'));
-//     $('#viewKoalas').append($koalaRow);
-//   }
+
