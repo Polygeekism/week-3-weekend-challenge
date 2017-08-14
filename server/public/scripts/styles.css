@@ -1,6 +1,7 @@
 .true{
     background-color:#47d1d1;
     text-decoration: line-through;
+    color: #778899;
     }
 tbody{
     font-family: 'Orbitron', sans-serif;
@@ -21,8 +22,12 @@ tbody{
 #addToList:hover{
     box-shadow: 0 0 10px 0 #3d658f inset, 0 0 10px 4px #3d658f;
 }
+#inputDiv{
+    padding-left:7px;
+    width: auto;
+}
 #toDoTask{
-    width: 200px;
+    width: 350px;
 }
 
 #addToList{
@@ -33,6 +38,7 @@ tbody{
     display: flex;
 }
 h1{
+    padding-left:7px;
     font-family: 'Copperplate', sans-serif;
     font-size: 35px;
 }
@@ -42,6 +48,7 @@ h1:hover{
 body{
     font-family: 'Anton', sans-serif;
 }
+
 .deleteButton{
         height: 30px;
         width: 80px;
@@ -67,13 +74,14 @@ td{
 }
 img{
     padding: 0;
-    display: block;
     margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
     opacity: .6;
-    
-}
+    }
+    table{
+        padding-left: 10px;
+    }
 
 #container {
     display: flex;
@@ -81,11 +89,10 @@ img{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    width: 40%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%); 
+    align-items: left;
+    width:600px;
+    top: 10%;
+    left: 10%;
     height: 70%;
     background: rgba(255,255,255, 0.7);
     border-radius:20px;
