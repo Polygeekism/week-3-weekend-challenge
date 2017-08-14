@@ -2,9 +2,9 @@
 
 $('document').ready(function () {
     getList();
-    $('#listOfTasks').on('click', 'tr', function(){
-        var taskId = $(this).data().id;
-        var complete = $(this).data().complete;
+    $('#listOfTasks').on('click', 'input', function(){
+        var taskId = $(this).closest('tr').data().id;
+        var complete = $(this).closest('tr').data().complete;
         var updateObject = {
             taskId: taskId,
             booleanValue: complete
@@ -71,11 +71,11 @@ function printList(dataRows) {
         var task = dataRows[i];
         var complete = task.task_complete;
        
-        var $taskRow = '<td>' + task.task_description + '</td><td>' + task.task_complete + '</td>' ;
+        var $taskRow = '<td>' + task.task_description + '</td>';
         if (complete === true){
-            $taskRow = '<tr class="true">' + $taskRow;
+            $taskRow = '<tr class="true">' + $taskRow + '<td><input type="checkbox" checked =true></td>';
         } else{
-            $taskRow = '<tr class="false">' + $taskRow;
+            $taskRow = '<tr class="false">' + $taskRow + '<td><input type="checkbox"></td>';
         }
         $taskRow += '<td><button class="deleteButton">Delete</button></td></tr>';
         $taskRow = $($taskRow);
