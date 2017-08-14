@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html >
-    <head>
-        <title>To Do List</title>
-        <script src='/vendors/jquery.min.js'></script>
-        <script src='/scripts/client.js'></script>
-        <link rel="stylesheet" href="/scripts/styles.css">
-    </head>
-    <body>
-        <h1>These are your tasks. Please don't procrastinate.</h1>
-        <input type='text' id='toDoTask'>
-        <button id='addToList'>Add to To Do list</button>
-        <div id='toDoList'>
-            <table>
-                <thead><th>Task Description</th><th>Task Complete?</th><th>Delete</th></thead>
-                <tbody id='listOfTasks'>
+<html>
 
-                </tbody>
-                
-            </table>
+<head>
+    <title>To Do List</title>
+    <script src='/vendors/jquery.min.js'></script>
+    <script src='/scripts/client.js'></script>
+    <link rel="stylesheet" href="/scripts/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:700" rel="stylesheet">
+</head>
+
+<body>
+    <img src="https://static.pexels.com/photos/414826/pexels-photo-414826.jpeg" alt="backgroundStarfield">
+        <div id='container'>
+            <h1>These are your tasks. <br>Please don't procrastinate.</h1>
+            <div id='inputDiv'>
+                <input type='text' id='toDoTask'>
+                <button id='addToList'>Add to To Do list</button>
+            </div>
+            <div id='toDoList'>
+                <table>
+                    <thead>
+                        <th>Task Description</th>
+                        <th>Task <br>Complete?</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody id='listOfTasks'>
+
+                    </tbody>
+
+                </table>
+            </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

@@ -35,6 +35,7 @@ $('document').ready(function () {
             success: function (response) {
                 //console.log('post route hit');
                 getList();
+                $('#toDoTask').val('');
             }
         })
     });

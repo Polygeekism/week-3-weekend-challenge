@@ -1,7 +1,90 @@
+:root{
+    blueButton:#003399;
+}
+
 .true{
-    background-color: green;
+    background-color:#47d1d1;
     text-decoration: line-through;
+    }
+tbody{
+    font-family: 'Orbitron', sans-serif;
 }
 .false{
-    background-color: cyan;
+    background-color: #c299ff;
+    
+}
+#addToList{
+    height: 30px;
+    width: 80px;
+    border-radius: 7px;
+    border-color: v#003399;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #003399 inset, 0 0 0 0 #003399;
+    transition: all 150ms ease-in-out;
+}
+#addToList:hover{
+    box-shadow: 0 0 10px 0 #003399 inset, 0 0 10px 4px #003399;
+}
+#toDoTask{
+    width: 200px;
+}
+
+#addToList{
+    width: 100px;
+}
+
+#inputDiv{
+    display: flex;
+}
+h1{
+    font-family: 'Copperplate', sans-serif;
+    font-size: 35px;
+}
+h1:hover{
+    color: red;
+}
+body{
+    font-family: 'Anton', sans-serif;
+}
+.deleteButton{
+        height: 30px;
+        width: 80px;
+        border-radius: 7px;
+        border-color: v#003399;
+        color: #fff;
+        box-shadow: 0 0 40px 40px #003399 inset, 0 0 0 0 #003399;
+        transition: all 150ms ease-in-out;
+}
+.deleteButton:hover {
+    box-shadow: 0 0 10px 0 #003399 inset, 0 0 10px 4px #003399;
+}
+
+
+td{
+    border-radius: 5px;
+}
+img{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top left;
+    background-size: cover; 
+    opacity: .6;
+    
+}
+
+#container {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+    height: 70%;
+    background: rgba(255,255,255, 0.7);
+    border-radius:20px;
+    
 }
